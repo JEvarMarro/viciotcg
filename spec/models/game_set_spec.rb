@@ -8,9 +8,9 @@
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #
-FactoryBot.define do
-  factory :game_set do
-    name { Faker::JapaneseMedia::OnePiece.akuma_no_mi }
-    release_date { Faker::Date.backward(days: 3) }
-  end
+require 'rails_helper'
+
+RSpec.describe GameSet, type: :model do
+  it { is_expected.to have_db_column(:name).of_type(:string) }
+  it { is_expected.to have_db_column(:release_date).of_type(:date) }
 end

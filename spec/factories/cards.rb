@@ -18,9 +18,9 @@ FactoryBot.define do
   factory :card do
     cost { nil }
     counter { nil }
-    name { "Roronoa Zoro" }
-    description { "[DON!! x1] [Your Turn] All of your Characters gain +1000 power." }
-    number { 001 }
+    name { Faker::JapaneseMedia::OnePiece.character }
+    description { Faker::JapaneseMedia::OnePiece.akuma_no_mi }
+    number { Faker::Number.digit }
     power { 5000 }
     tags { "Supernovas, Straw Hat Crew" }
     trigger { nil }
